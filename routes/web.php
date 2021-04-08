@@ -22,8 +22,6 @@ use Illuminate\Support\Facades\Route;
 
     //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-
     //User Email Test
 
     Route::get('/email-send' , [App\Http\Controllers\TestEmailController::class, 'testemail'] )->name('test.email');
