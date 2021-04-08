@@ -23,6 +23,9 @@
                                             <input  name="uname" class="form-control" type="text" placeholder="User Name">
                                         </div>
                                         <div class="form-group">
+                                            <input  name="cell" class="form-control" type="text" placeholder="Phone Number">
+                                        </div>
+                                        <div class="form-group">
                                             <input name="email" class="form-control" type="text" placeholder="Email">
                                         </div>
                                         <div class="form-group">

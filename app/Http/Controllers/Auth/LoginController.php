@@ -39,6 +39,30 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    //Many Way to Login
+
+    public function username()
+    {
+
+        $log_data =    request()->input('logdata');
+
+        $phone_login = substr($log_data , 0 , 4);
+
+        if (filter_var($log_data, FILTER_VALIDATE_EMAIL)) {
+            $type = 'email';
+        }elseif($phone_login == '8801'){
+            $type = 'cell';
+
+        }else{
+            $type = 'uname';
+        }
+
+        request()->merge([$type =>$log_data ]);
+        return $type;
+
+    }
+
+
 
     //After Logout
     protected function loggedOut(Request $request)
