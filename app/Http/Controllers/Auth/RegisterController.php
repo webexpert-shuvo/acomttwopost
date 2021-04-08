@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Notifications\NewUserAccountNotification;
 
 class RegisterController extends Controller
 {
@@ -82,6 +83,9 @@ class RegisterController extends Controller
     protected function registered(Request $request, $user)
     {
         //Logged Out Then return Login Page
+
+
+        $user -> notify(new NewUserAccountNotification($user));
 
         Auth::logout();
         return redirect()->route('loginpage.show');

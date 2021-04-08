@@ -24,6 +24,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
+    //User Email Test
+
+    Route::get('/email-send' , [App\Http\Controllers\TestEmailController::class, 'testemail'] )->name('test.email');
+
     //Admin Panel Show
 
     Route::get('/admin/register' , [App\Http\Controllers\AdminpanelController::class, 'register'])->name('registerpage.show');
